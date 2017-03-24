@@ -1,0 +1,87 @@
+<?php include("includes/header.php"); ?>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+
+    <!-- Top Menu Items -->
+
+    <?php include('includes/admin_navigation.php')?>
+
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+    <?php include('includes/admin_sidebar_nav.php')?>
+
+    <!-- /.navbar-collapse -->
+</nav>
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Users
+                    <small>All</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-file"></i> All Users
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+<?php
+
+
+//    $users = User::find_all_users();
+//
+//    foreach($users as $user){
+//
+//    echo $user->username . "<br>";
+//    }
+//
+//    $user = User::find_user_by_id(3);
+//
+//    echo "Username: " . $user->username . "<br>";
+//    echo "Email: " . $user->email . "<br>";
+//    echo "First Name: " . $user->first_name . "<br>";
+//    echo "Last Name: " . $user->last_name . "<br>";
+
+    $user = new User();
+
+    $user->username = "Jimschmitt";
+    $user->password = "1234";
+    $user->email = "JIMschmitt@gmail.com";
+    $user->first_name = "JIm";
+    $user->last_name = "Schmitt";
+
+    $user->save();
+
+//    $found_user = User::find_user_by_id(1);
+//
+//    $found_user->password = "12345";
+//
+//    $found_user->save();
+//    $found_user->delete();
+
+?>
+
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+<?php include("includes/footer.php"); ?>
